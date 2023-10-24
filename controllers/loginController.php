@@ -11,11 +11,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $conn->query($query);
 
     if ($result->num_rows == 1) {
+        // Login bem-sucedido, agora defina os cookies com o email e o nome de usuário
+        $row = $result->fetch_assoc();
+        $email = $row['email'];
+
+        setcookie('username', $username, time() + 3600, '/');
+        setcookie('email', $email, time() + 3600, '/');
+
         $_SESSION['username'] = $username;
         header('Location: painel.php'); // Redirecionar para a página do painel após o login
     } else {
-        echo "Nome de usuário ou senha incorretos.";
+        // Senhas não coincidem, defina uma mensagem de erro na sessão
+        $_SESSION['error_message'] = "Nome de usuário ou senha incorretos";
+        // Redirecione de volta à página anterior
+        header('Location: ../src/pages/auth/login.php');
     }
 }
-?>
-<!-- Formulário de login aqui -->

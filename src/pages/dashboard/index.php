@@ -43,8 +43,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
         <header class="header">
             <nav class="nav container">
                 <div class="nav__data">
-                    <a href="#" class="nav__logo">
-                        <i class="ri-planet-line"></i> GOrongosa
+                    <a href="./index.php" class="nav__logo">
+                        <i class="ri-planet-line"></i> ZOOlandia
                     </a>
 
                     <div class="nav__toggle" id="nav-toggle">
@@ -56,38 +56,43 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                 <!--=============== NAV MENU ===============-->
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li><a href="#" class="nav__link">Home</a></li>
+                        <li><a href="./index.php" class="nav__link">Home</a></li>
 
-                        <li><a href="#" class="nav__link">Sobre</a></li>
+                        <li><a href="../info.php" class="nav__link">Sobre</a></li>
 
                         <!--=============== DROPDOWN 1 ===============-->
                         <li class="dropdown__item">
                             <div class="nav__link">
-                                Grupos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                                Grupos <i class="ri-arrow-down-s-line dropdown__arrow"> </i>
                             </div>
 
                             <ul class="dropdown__menu">
                                 <li>
-                                    <a href="#" class="dropdown__link">
+                                    <a href="../grupos.php" class="dropdown__link">
+                                        <i class="ri-pie-chart-line"></i> Todos os Grupos
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="../grupo/Mamiferos.php" class="dropdown__link">
                                         <i class="ri-pie-chart-line"></i> Mamíferos
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#" class="dropdown__link">
-                                        <i class="ri-arrow-up-down-line"></i> Mamíferos
+                                    <a href="../grupo/repteis.php" class="dropdown__link">
+                                        <i class="ri-arrow-up-down-line"></i> Repteis
                                     </a>
                                 </li>
 
                                 <!--=============== DROPDOWN SUBMENU ===============-->
                                 <li class="dropdown__subitem">
                                     <div class="dropdown__link">
-                                        <i class="ri-bar-chart-line"></i> Aves <i class="ri-add-line dropdown__add"></i>
+                                        <i class="ri-bar-chart-line"></i> Aves -> <i class="ri-add-line dropdown__add"></i>
                                     </div>
 
                                     <ul class="dropdown__submenu">
                                         <li>
-                                            <a href="#" class="dropdown__sublink">
+                                            <a href="../grupo/aves.php" class="dropdown__sublink">
                                                 <i class="ri-file-list-line"></i> Aves colocar nome
                                             </a>
                                         </li>

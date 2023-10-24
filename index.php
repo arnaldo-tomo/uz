@@ -29,7 +29,7 @@ if (isset($_SESSION['error_message'])) {
 
 <body>
     <header class="header">
-        <a href="#" class="Logotipo">Zoolandia.</a>
+        <a href="#" class="Logotipo">ZOOlandia.</a>
         <nav class="navbar">
             <a href="#" class="active">Home</a>
             <a href="./src/pages/info.php">Sobre nos</a>

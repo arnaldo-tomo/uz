@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Verifique se os cookies estão definidos
+if (isset($_COOKIE['username'])) {
+    header('Location: ../dashboard/index.php');
+}
+// "../dashboard/index.php"
+
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']); // Limpa a mensagem de erro para que ela não seja exibida novamente
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +25,10 @@
 <body>
     <div class="login-container">
         <h1>Login</h1>
-        <form action="../../../configs/loginController.php" method="POST">
+        <?php if (isset($error_message)) { ?>
+            <p style="color: red;"><b><?php echo $error_message; ?></b></p>
+        <?php } ?>
+        <form action="../../../controllers/loginController.php" method="POST">
             <div class="form-group">
                 <label for="username">Usuário:</label>
                 <input type="text" name="username" placeholder="Nome de usuário" required>

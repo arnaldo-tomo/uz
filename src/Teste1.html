@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inscrição</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label, input, select {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Formulário de Inscrição</h1>
+    <form id="signup-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" required>
+
+        <label for="gender">Sexo:</label>
+        <select id="gender">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select>
+
+        <label for="birthdate">Data de Nascimento:</label>
+        <input type="date" id="birthdate" required>
+
+        <label for="address">Endereço:</label>
+        <input type="text" id="address" required>
+
+        <label for="phone">Telefone:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="workplace">Local de Trabalho ou Estudo:</label>
+        <input type="text" id="workplace">
+
+        <button type="submit">Inscrever-se</button>
+    </form>
+
+    <h2>Informações das Espécies</h2>
+    <button id="show-info-button">Mostrar Informações</button>
+    <div id="species-info" style="display: none;">
+        <!-- Aqui você pode inserir as informações das espécies -->
+        <p>Informações das espécies de possível aquisição do ano.</p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    const showInfoButton = document.getElementById("show-info-button");
+    const speciesInfo = document.getElementById("species-info");
+
+    showInfoButton.addEventListener("click", function() {
+        if (speciesInfo.style.display === "none" || speciesInfo.style.display === "") {
+            speciesInfo.style.display = "block";
+        } else {
+            speciesInfo.style.display = "none";
+        }
+    });
+
+    const signupForm = document.getElementById("signup-form");
+    signupForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        // Coletar os dados do formulário
+        const name = document.getElementById("name").value;
+        const gender = document.getElementById("gender").value;
+        const birthdate = document.getElementById("birthdate").value;
+        const address = document.getElementById("address").value;
+        const phone = document.getElementById("phone").value;
+        const workplace = document.getElementById("workplace").value;
+
+        // Aqui você pode enviar os dados do formulário para um servidor ou fazer o que for necessário.
+        // Por enquanto, apenas mostraremos os dados no console.
+        console.log("Dados do formulário:");
+        console.log("Nome:", name);
+        console.log("Sexo:", gender);
+        console.log("Data de Nascimento:", birthdate);
+        console.log("Endereço:", address);
+        console.log("Telefone:", phone);
+        console.log("Local de Trabalho ou Estudo:", workplace);
+    });
+});
+
+    </script>
+</body>
+</html>

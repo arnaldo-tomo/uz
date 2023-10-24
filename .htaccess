@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+# Redirecione todas as requisições para o arquivo PHP correspondente (caso ele exista)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Redirecione URLs amigáveis (por exemplo, de "index" para "index.php")
+RewriteRule ^index$ index.php [L]

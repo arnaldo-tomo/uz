@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Effect</title>
+    <style>
+        /* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.parallax {
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.parallax-background {
+    background-image: url(Imagens/wolf-142173.jpg);
+    background-size: cover;
+    background-attachment: fixed; /* Isso é importante para o efeito parallax */
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.parallax-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+}
+
+    </style>
+</head>
+<body>
+    <div class="parallax">
+        <div class="parallax-background"></div>
+        <div class="parallax-content">
+            <h1>Seu Conteúdo</h1>
+            <p>Algum texto aqui.</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque accusantium eaque at libero a ipsa qui esse sit ad illo. Optio voluptatem rem aperiam rerum eos consectetur suscipit atque maiores?</p>
+        </div>
+    </div>
+    <script>
+
+window.addEventListener('scroll', function() {
+    let offset = window.pageYOffset;
+    let parallaxBackground = document.querySelector('.parallax-background');
+    
+    // Ajuste o valor (0.5) para a velocidade do parallax desejada
+    parallaxBackground.style.backgroundPositionY = -offset * 0.5 + 'px';
+});
+
+    </script>
+</body>
+</html>

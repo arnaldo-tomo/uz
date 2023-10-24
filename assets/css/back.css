@@ -1,0 +1,8 @@
+
+#content {
+  background-image: url(''); 
+  background-size: cover; /* Isso ajusta a imagem para preencher a div completamente */
+  background-position: center center; /* Centraliza a imagem na div */
+  background-repeat: no-repeat; /* Impede que a imagem se repita */
+  /* Outros estilos de plano de fundo, como cor de fundo, gradientes, etc., podem ser adicionados aqui */
+}

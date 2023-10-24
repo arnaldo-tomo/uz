@@ -1,0 +1,89 @@
+/* Estilo para o container que envolve o formulário */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-image: url("../img //ape-17474.jpg");
+    opacity: 100%;
+
+
+}
+
+/* Estilo para o cabeçalho do formulário */
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Estilo para os rótulos dos campos */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+}
+
+/* Estilo para os campos de entrada de texto */
+input[type="password"],
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select {
+    width: 93%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+}
+
+/* Estilo para o botão de registro */
+button[type="submit"] {
+    background-color: #009688;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+
+
+}
+
+/* Estilo para o botão de registro quando o cursor passa por cima */
+button[type="submit"]:hover {
+    background-color: #007d70;
+}
+
+/* Estilo para as mensagens de erro (se aplicável) */
+.error-message {
+    color: #ff0000;
+    margin-top: 5px;
+}
+
+/* Estilo para o campo de seleção de gênero */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilo para o container do botão */
+.button-container {
+    text-align: center;
+}
+
+body {
+    background-image: url("../img/fundo.png");
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-size: cover;
+    opacity: 100;
+}

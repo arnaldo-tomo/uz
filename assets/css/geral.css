@@ -7,7 +7,7 @@
 }
 
 .informacao-geral h2 {
-    color: #009688;
+    color: #e2c044;
 }
 
 .informacao-geral p {
@@ -35,7 +35,7 @@
     width: 100px;
     transition: width 0.3s;
     /* Animação de transição suave */
-    color: #009688;
+    color: #e2c044;
 }
 
 
@@ -64,7 +64,7 @@
 }
 
 .Reservab {
-    background-color: #009688;
+    background-color: #e2c044;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -85,8 +85,12 @@
     width: 100%;
 }
 
+.fatima22 {
+    margin-top: 7%;
+    margin-left: 1%;
+}
 section {
-    padding: 8rem 7%;
+    /* padding: 8rem 7%; */
 }
 
 .informacao1 .titulo {
@@ -121,9 +125,12 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 #menu-geral-w {
+    padding-bottom: 50px;
+        padding-bottom: 50px;
     list-style-type: none;
     padding-right: 75%;
 

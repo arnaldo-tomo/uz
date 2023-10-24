@@ -41,11 +41,11 @@ if (isset($_SESSION['error_message'])) {
         <form action="./controllers/auth.php" method="POST">
             <div class="form-group">
                 <label for="username">Usuário:</label>
-                <input type="text" name="username" placeholder="Nome de usuário" required>
+                <input type="text" name="root" placeholder="Username" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>
-                <input type="password" name="password" placeholder="Senha" required required>
+                <input type="password" name="password" placeholder="password" required required>
             </div>
             <a> <button type="submit">Entrar</button> </a>
         </form>

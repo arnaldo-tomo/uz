@@ -21,7 +21,7 @@ if (isset($_SESSION['error_message'])) {
     <div class="container">
         <h1>Cadastro de Usuário</h1>
         <?php if (isset($error_message)) { ?>
-        <p style="color: red;"><b><?php echo $error_message; ?></b></p>
+            <p style="color: red;"><b><?php echo $error_message; ?></b></p>
         <?php } ?>
         <form id="cadastro-form" method="POST" action="../../../controllers/registerController.php">
             <label for="nome">Nome:</label>
@@ -37,7 +37,7 @@ if (isset($_SESSION['error_message'])) {
             </select>
 
             <label for="data-nascimento">Data de Nascimento:</label>
-            <input type="date" name="datanascimento" required autocomplete="additional-name">
+            <input type="date" name="datanascimento" required>
 
 
             <label for="telefone">Telefone:</label>

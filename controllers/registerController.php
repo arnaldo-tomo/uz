@@ -13,9 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifique se as senhas coincidem
     if ($password === $confirm_password) {
-
-
-
         $conn = new mysqli('localhost', 'root', '', 'fatima_zologico');
         $dateTime = new DateTime();
         $criado_em = $dateTime->format('Y-m-d H:i:s');
@@ -28,7 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setcookie('email', $email, time() + 3600, '/');
 
             header('Location: ../src/pages/dashboard/index.php');
-            echo "Registro bem-sucedido!";
         } else {
             echo "Erro ao registrar: " . $conn->error;
         }

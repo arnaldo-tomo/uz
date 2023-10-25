@@ -2,8 +2,8 @@
 session_start();
 
 // Verifique se os cookies estão definidos
-if (isset($_COOKIE['username'])) {
-    header('Location: ../dashboard/index.php');
+if (isset($_COOKIE['root'])) {
+    header('Location: ./views/index.php');
 }
 // "../dashboard/index.php"
 
@@ -41,7 +41,7 @@ if (isset($_SESSION['error_message'])) {
         <form action="./controllers/auth.php" method="POST">
             <div class="form-group">
                 <label for="username">Usuário:</label>
-                <input type="text" name="root" placeholder="Username" required>
+                <input type="password" name="root" placeholder="Username" required>
             </div>
             <div class="form-group">
                 <label for="password">Senha:</label>

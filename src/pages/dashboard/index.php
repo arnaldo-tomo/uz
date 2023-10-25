@@ -25,7 +25,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     <link rel="stylesheet" href="../../../assets/css/MainStyle.css">
     <link rel="stylesheet" href="../../../assets/css/fatima.css">
     <link rel="stylesheet" href="../../../assets/css/menu.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
         footer {

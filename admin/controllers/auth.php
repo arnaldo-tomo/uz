@@ -15,12 +15,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setcookie('root', $username, time() + 3600, '/');
 
         $_SESSION['username'] = $username;
-        echo "CERTO";
-        // header('Location: ../src/pages/dashboard/index.php');
+        header('Location: ../views/index.php');
     } else {
         echo "NAO";
 
         $_SESSION['error_message'] = "Nome de usuário ou senha incorretos";
-        // header('Location: ../src/pages/auth/login.php');
+        header('Location: ../index.php');
     }
 }

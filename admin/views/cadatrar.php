@@ -15,6 +15,11 @@ if (isset($_COOKIE['root'])) {
 
 
 
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+}
+
 
 // Consulta para recuperar os animais do banco de dados
 $sql = "SELECT * FROM animal";
@@ -182,6 +187,9 @@ $result = $conn->query($sql);
     <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
         <div class="animas">
             <h1>Cadastrar Animas</h1>
+            <?php if (isset($error_message)) { ?>
+                <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
+            <?php } ?>
             <div class="inputs">
                 <label class="label">nome</label>
                 <br />

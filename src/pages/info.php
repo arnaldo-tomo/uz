@@ -1,17 +1,3 @@
-<?php
-session_start();
-
-// Verifique se os cookies estão definidos
-if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
-    $username = $_COOKIE['username'];
-    $email = $_COOKIE['email'];
-} else {
-    $_SESSION['error_message'] = "Voce nao esta autenticado.";
-    // Os cookies não estão definidos, redirecione para a página de login
-    header('Location: ../../index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 

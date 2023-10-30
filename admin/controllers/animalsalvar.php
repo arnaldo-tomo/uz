@@ -4,6 +4,8 @@ include '../../configs/database.php';
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
+    $sexo = $_POST["sexo"];
+    $especie = $_POST["especie"];
     $descricao = $_POST["descricao"];
 
     // Verifica se um arquivo de imagem foi enviado
@@ -15,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Move o arquivo de imagem para a pasta de uploads
         if (move_uploaded_file($_FILES["foto"]["tmp_name"], $target_file)) {
             // Insere os dados no banco de dados
-            $sql = "INSERT INTO animal (nome, descricao, foto) VALUES ('$nome', '$descricao', '$foto')";
+            $sql = "INSERT INTO animal (nome,sexo,especie,descricao, foto) VALUES ('$nome', '$sexo','$especie', '$descricao', '$foto')";
             if ($conn->query($sql) === TRUE) {
                 echo "Animal cadastrado com sucesso.";
             } else {

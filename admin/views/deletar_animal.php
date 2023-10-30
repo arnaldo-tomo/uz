@@ -14,7 +14,8 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM animal WHERE id = $animal_id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Animal excluído com sucesso.";
+        $_SESSION['error_message'] = "Animal excluído com sucesso.";
+        header('Location: verAnimas.php');
     } else {
         echo "Erro ao excluir o animal: " . $conn->error;
     }

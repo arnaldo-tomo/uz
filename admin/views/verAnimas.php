@@ -3,6 +3,11 @@
 session_start();
 include '../../configs/database.php';
 // Verifique se os cookies estão definidos
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+}
+
 if (isset($_COOKIE['root'])) {
     $root = $_COOKIE['root'];
 } else {
@@ -164,6 +169,9 @@ $result = $conn->query($sql);
     <!-- JavaScript -->
     <div class="animas">
         <h1>Todos os animais</h1>
+        <?php if (isset($error_message)) { ?>
+            <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
+        <?php } ?>
         <table border="1px" style="width: 1080px;">
             <thead>
                 <tr>

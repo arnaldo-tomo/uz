@@ -14,6 +14,11 @@ if (isset($_COOKIE['root'])) {
 
 
 
+if (isset($_SESSION['error_message'])) {
+    $error_message = $_SESSION['error_message'];
+    unset($_SESSION['error_message']);
+}
+
 
 
 // Consulta para recuperar os animais do banco de dados
@@ -165,6 +170,9 @@ $result = $conn->query($sql);
     <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
         <div class="animas">
             <h1>Cadastrar Animas</h1>
+            <?php if (isset($error_message)) { ?>
+                <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
+            <?php } ?>
             <div class="inputs">
                 <label class="label">nome</label>
                 <br />
@@ -181,36 +189,3 @@ $result = $conn->query($sql);
 
     <script src="../assets/js/main.js"></script>
 </body>
-
-
-
-
-<!-- <div class="submenu">
-        <h1>Ola,Admin</h1>
-
-        <h2>Cadastro de Animal</h2>
-        <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
-            Nome: <input type="text" name="nome" required><br>
-            Descrição: <textarea name="descricao" required></textarea><br>
-            Foto: <input type="file" name="foto" required><br>
-            <input type="submit" value="Cadastrar">
-            </form>
-            <h2>Lista de Animais</h2>
-
-        </div> -->
-<!-- <?php
-        if ($result->num_rows > 0) {
-            echo '<table border="1">';
-            echo '<tr><th>Nome</th><th>Descrição</th><th>Foto</th></tr>';
-            while ($row = $result->fetch_assoc()) {
-                echo '<tr>';
-                echo '<td>' . $row["nome"] . '</td>';
-                echo '<td>' . $row["descricao"] . '</td>';
-                echo '<td><img src="../controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '"></td>';
-                echo '</tr>';
-            }
-            echo '</table>';
-        } else {
-            echo "Nenhum animal cadastrado ainda.";
-        }
-        ?> -->

@@ -173,6 +173,7 @@ $result = $conn->query($sql);
                     <th>Especie </th>
                     <th>descricao </th>
                     <th>Foto </th>
+                    <th>Accao </th>
                 </tr>
             </thead>
             <tbody>
@@ -188,6 +189,11 @@ $result = $conn->query($sql);
                         echo '<td>' . $row["especie"] . '</td>';
                         echo '<td>' . $row["descricao"] . '</td>';
                         echo '<td><img width="50px"   src="../controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '"></td>';
+                        echo '<td>';
+                        echo '<a href="editar_animal.php?id=' . $row["id"] . '">Editar</a>';
+                        echo ' | ';
+                        echo '<a href="deletar_animal.php?id=' . $row["id"] . '">Deletar</a>';
+                        echo '</td>';
                         echo '</tr>';
                     }
                     echo '</table>';

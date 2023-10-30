@@ -1,28 +1,53 @@
-/*=============== SHOW MENU ===============*/
-const showMenu = (toggleId, navId) =>{
-   const toggle = document.getElementById(toggleId),
-         nav = document.getElementById(navId)
+const body = document.querySelector("body");
+const darkLight = document.querySelector("#darkLight");
+const sidebar = document.querySelector(".sidebar");
+const submenuItems = document.querySelectorAll(".submenu_item");
+const sidebarOpen = document.querySelector("#sidebarOpen");
+const sidebarClose = document.querySelector(".collapse_sidebar");
+const sidebarExpand = document.querySelector(".expand_sidebar");
+sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
 
-   toggle.addEventListener('click', () =>{
-       // Add show-menu class to nav menu
-       nav.classList.toggle('show-menu')
+sidebarClose.addEventListener("click", () => {
+    sidebar.classList.add("close", "hoverable");
+});
+sidebarExpand.addEventListener("click", () => {
+    sidebar.classList.remove("close", "hoverable");
+});
 
-       // Add show-icon to show and hide the menu icon
-       toggle.classList.toggle('show-icon')
-   })
+sidebar.addEventListener("mouseenter", () => {
+    if (sidebar.classList.contains("hoverable")) {
+        sidebar.classList.remove("close");
+    }
+});
+sidebar.addEventListener("mouseleave", () => {
+    if (sidebar.classList.contains("hoverable")) {
+        sidebar.classList.add("close");
+    }
+});
+
+darkLight.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+        document.setI;
+        darkLight.classList.replace("bx-sun", "bx-moon");
+    } else {
+        darkLight.classList.replace("bx-moon", "bx-sun");
+    }
+});
+
+submenuItems.forEach((item, index) => {
+    item.addEventListener("click", () => {
+        item.classList.toggle("show_submenu");
+        submenuItems.forEach((item2, index2) => {
+            if (index !== index2) {
+                item2.classList.remove("show_submenu");
+            }
+        });
+    });
+});
+
+if (window.innerWidth < 768) {
+    sidebar.classList.add("close");
+} else {
+    sidebar.classList.remove("close");
 }
-
-showMenu('nav-toggle','nav-menu')
-
-
-let btn = document.querySelector("#btn");
-let sidebar = document.querySelector(".sidebar");
-let searchBtn = document.querySelector(".bx-search");
-
-btn.onclick = function () {
-    sidebar.classList.toggle("active");
-}
-searchBtn.onclick = function () {
-    sidebar.classList.toggle("active");
-}
-

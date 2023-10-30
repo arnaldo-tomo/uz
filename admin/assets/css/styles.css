@@ -34,6 +34,12 @@
   }
 }
 
+.submenu {
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 100px;
+}
+
 /*=============== BASE ===============*/
 * {
   box-sizing: border-box;
@@ -65,6 +71,7 @@ a {
 
 /*=============== HEADER ===============*/
 .header {
+  margin-bottom: 80px;
   position: fixed;
   top: 0;
   left: 0;
@@ -340,6 +347,7 @@ a {
     transition: top .3s;
   }
 }
+
 /* Google Font CDN Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -425,7 +433,7 @@ body {
 }
 
 .sidebar ul {
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .sidebar ul li {
@@ -631,9 +639,11 @@ body {
   z-index: 100;
   width: calc(100% - 240px);
   left: 240px;
+  margin-top: 10px;
 }
 
 .home_content .text {
+  padding-top: 80px;
   font-size: 25px;
   font-weight: 600;
   color: var(--light-black);

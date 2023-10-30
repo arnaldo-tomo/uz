@@ -25,7 +25,6 @@ $result = $conn->query($sql);
 
 
 <!DOCTYPE html>
-<!-- Coding by CodingNepal || www.codingnepalweb.com -->
 <html lang="en">
 
 <head>
@@ -61,9 +60,53 @@ $result = $conn->query($sql);
         <div class="menu_content">
             <ul class="menu_items">
                 <div class="menu_title menu_dahsboard"></div>
-                <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+
+                <ul class="menu_items">
+                    <li class="item">
+                        <a href="./index.php" class="nav_link">
+                            <span class="navlink_icon">
+                                <i class="bx bx-home"></i>
+                            </span>
+                            <span class="navlink"> <b>Dashboard</b></span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="./cadatrar.php" class="nav_link">
+                            <span class="navlink_icon">
+                                <i class="bx bx-loader-circle"></i>
+                            </span>
+                            <span class="navlink"> Cadastrar Animaos</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="./cadastarEspecie.php" class="nav_link">
+                            <span class="navlink_icon">
+                                <i class="bx bx-loader-circle"></i>
+                            </span>
+                            <span class="navlink"> Cadastrar Especie</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="./verAnimas.php" class="nav_link">
+                            <span class="navlink_icon">
+                                <i class="bx bx-loader-circle"></i>
+                            </span>
+                            <span class="navlink"> Ver Animais</span>
+                        </a>
+                    </li>
+                    <li class="item">
+                        <a href="./verEspecie.php" class="nav_link">
+                            <span class="navlink_icon">
+                                <i class="bx bx-loader-circle"></i>
+                            </span>
+                            <span class="navlink"> Ver Especie</span>
+                        </a>
+                    </li>
+
+
+                </ul>
                 <!-- start -->
-                <li class="item">
+                <!-- <li class="item">
                     <div href="#" class="nav_link submenu_item">
                         <span class="navlink_icon">
                             <i class="bx bx-home-alt"></i>
@@ -78,7 +121,7 @@ $result = $conn->query($sql);
                         <a href="#" class="nav_link sublink">Ver Animais</a>
                         <a href="#" class="nav_link sublink">Ver Especie</a>
                     </ul>
-                </li>
+                </li> -->
                 <!-- end -->
 
 
@@ -136,28 +179,49 @@ $result = $conn->query($sql);
         </div>
     </nav>
     <!-- JavaScript -->
-
-    <div class="animas">
-        <h1>Cadastrar Animas</h1>
-        <div class="inputs">
-            <label>nome</label>
-            <br />
-            <input class="inpt" placeholder="Informe o nome ">
+    <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
+        <div class="animas">
+            <h1>Cadastrar Animas</h1>
+            <div class="inputs">
+                <label class="label">nome</label>
+                <br />
+                <input type="text" name="nome" class="inpt" placeholder="Informe o nome " required>
+            </div>
+            <div class="inputs">
+                <label class="label">FotoGrafia</label>
+                <br />
+                <input type="file" name="foto" class="inpt" required>
+            </div>
+            <div class="inputs">
+                <label class="label">sexo</label>
+                <br />
+                <select class="inpt" name="sexo" required>
+                    <option selected disabled>- Selecione o sexo do animal-</option>
+                    <option value="M">Macho</option>
+                    <option value="F">Femia</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <label class="label">Espécie</label>
+                <br />
+                <select class="inpt" name="especie" required>
+                    <option selected disabled>- Selecione a espécie de animal:-</option>
+                    <option value="cachorro">Cachorro</option>
+                    <option value="gato">Gato</option>
+                    <option value="coelho">Coelho</option>
+                    <option value="pássaro">Pássaro</option>
+                    <option value="peixe">Peixe</option>
+                </select>
+            </div>
+            <div class="inputs">
+                <label class="label">Descricao</label><br>
+                <textarea class="ttrea" rows="5" name="descricao" required></textarea>
+            </div>
+            <div class="inputs">
+                <button class="btn" type="submit">Cadastrar</button>
+            </div>
         </div>
-        <div class="inputs">
-            <label>sexo</label>
-            <br />
-            <select class="inpt">
-                <option selected disabled>- Selecione o sexo do animal-</option>
-                <option value="M">Macho</option>
-                <option value="F">Femia</option>
-            </select>
-        </div>
-        <div class="inputs">
-            <label>nome</label><br>
-            <textarea class="inpt" rows="10"></textarea>
-        </div>
-    </div>
+    </form>
 
 
     <script src="../assets/js/main.js"></script>

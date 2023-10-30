@@ -21,61 +21,154 @@ $sql = "SELECT * FROM animal";
 $result = $conn->query($sql);
 
 ?>
+
+
+
 <!DOCTYPE html>
+<!-- Coding by CodingNepal || www.codingnepalweb.com -->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-
-    <link rel="stylesheet" href="../assets/css/styles.css">
-
-    <title>ADMIN</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boxicons CSS -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 
 <body>
-    <header class="header">
-        <nav class="nav container">
-            <div class="nav__data">
-                <a href="#" class="nav__logo">
-                    <i class="ri-planet-line"></i> ZOOlolandia
-                </a>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo_item">
+            <i class="bx bx-menu" id="sidebarOpen"></i>
+            </i>ZOOlogico
+        </div>
 
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line nav__burger"></i>
-                    <i class="ri-close-line nav__close"></i>
+        <div class="search_bar">
+            <input type="text" style="text-align: center;" disabled value="Ola,<?php echo $root; ?>" />
+        </div>
+
+        <div class="navbar_content">
+            <i class="bi bi-grid"></i>
+            <i class='bx bx-sun' id="darkLight"></i>
+            <!-- <img src="../assets/img/profile.jpg" alt="" class="profile" /> -->
+        </div>
+    </nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+        <div class="menu_content">
+            <ul class="menu_items">
+                <div class="menu_title menu_dahsboard"></div>
+                <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
+                <!-- start -->
+                <li class="item">
+                    <div href="#" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <i class="bx bx-home-alt"></i>
+                        </span>
+                        <span class="navlink">Animais</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+
+                    <ul class="menu_items submenu">
+                        <a href="./cadatrar.php" class="nav_link sublink">Cadastrar Animaos</a>
+                        <a href="#" class="nav_link sublink">Cadastrar Especie</a>
+                        <a href="#" class="nav_link sublink">Ver Animais</a>
+                        <a href="#" class="nav_link sublink">Ver Especie</a>
+                    </ul>
+                </li>
+                <!-- end -->
+
+
+            </ul>
+
+            <ul class="menu_items">
+                <div class="menu_title menu_editor"></div>
+                <li class="item">
+                    <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink"> Visitantes</span>
+                    </a>
+                </li>
+                <!-- End -->
+
+                <li class="item">
+                    <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink">Bilhentes</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink">Outros</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink">Outros</span>
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Sidebar Open / Close -->
+            <div class="bottom_content">
+                <div class="bottom expand_sidebar">
+                    <span> Expandir</span>
+                    <i class='bx bx-log-in'></i>
+                </div>
+                <div class="bottom collapse_sidebar">
+                    <span> Esconder</span> <a href="./logout.php"> <i class='bx bx-log-out'></i></a>
+
                 </div>
             </div>
+        </div>
+    </nav>
+    <!-- JavaScript -->
 
-            <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list">
-                    <li><a href="#" class="nav__link">Home</a></li>
+    <div class="animas">
+        <h1>Dashboard</h1>
 
+        <div class="coluna">
 
-                    <li><a href="#" class="nav__link">Gruppo</a></li>
-                    <li><a href="#" class="nav__link">Animais</a></li>
-
-                    <li class="dropdown__item">
-                        <div class="nav__link">
-                            <?php echo $root; ?> <i class="ri-arrow-down-s-line dropdown__arrow"></i>
-                        </div>
-
-                        <ul class="dropdown__menu">
-                            <li>
-                                <a href="./logout.php" class="dropdown__link">
-                                    <i class="ri-message-3-line"></i> Logout
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                </ul>
+            <div class="card1">
+                <h4>Total de Animais</h4>
+                <h1>55</h1>
             </div>
-        </nav>
-    </header>
-    <div class="submenu">
+            <div class="card1">
+                <h4>total Especie</h4>
+                <h1>55</h1>
+            </div>
+            <div class="card1">
+                <h4>Total de Visiatntes</h4>
+                <h1>55</h1>
+            </div>
+            <div class="card1">
+                <h4>Total de Bilhentes</h4>
+                <h1>55</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../assets/js/main.js"></script>
+</body>
+
+
+
+
+<!-- <div class="submenu">
         <h1>Ola,Admin</h1>
 
         <h2>Cadastro de Animal</h2>
@@ -87,7 +180,8 @@ $result = $conn->query($sql);
         </form>
         <h2>Lista de Animais</h2>
 
-        <?php
+    </div> -->
+<!-- <?php
         if ($result->num_rows > 0) {
             echo '<table border="1">';
             echo '<tr><th>Nome</th><th>Descrição</th><th>Foto</th></tr>';
@@ -102,16 +196,4 @@ $result = $conn->query($sql);
         } else {
             echo "Nenhum animal cadastrado ainda.";
         }
-        ?>
-    </div>
-
-
-
-
-
-    <script src="main.js"></script>
-
-    <script src="../assets/js/main.js"></script>
-</body>
-
-</html>
+        ?> -->

@@ -19,7 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Insere os dados no banco de dados
             $sql = "INSERT INTO animal (nome,sexo,especie,descricao, foto) VALUES ('$nome', '$sexo','$especie', '$descricao', '$foto')";
             if ($conn->query($sql) === TRUE) {
-                echo "Animal cadastrado com sucesso.";
+                $_SESSION['error_message'] = "Animal cadastrado com sucesso.";
+                header('Location: ../views/cadatrar.php');
             } else {
                 echo "Erro ao cadastrar o animal: " . $conn->error;
             }

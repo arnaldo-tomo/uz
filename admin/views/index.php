@@ -95,7 +95,7 @@ $result = $conn->query($sql);
                 echo '<tr>';
                 echo '<td>' . $row["nome"] . '</td>';
                 echo '<td>' . $row["descricao"] . '</td>';
-                echo '<td><img src="uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '"></td>';
+                echo '<td><img src="../controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '"></td>';
                 echo '</tr>';
             }
             echo '</table>';

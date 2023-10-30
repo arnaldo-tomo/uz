@@ -61,25 +61,46 @@ $result = $conn->query($sql);
         <div class="menu_content">
             <ul class="menu_items">
                 <div class="menu_title menu_dahsboard"></div>
-                <!-- duplicate or remove this li tag if you want to add or remove navlink with submenu -->
-                <!-- start -->
                 <li class="item">
-                    <div href="#" class="nav_link submenu_item">
+                    <a href="./index.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-home-alt"></i>
+                            <i class="bx bx-home"></i>
                         </span>
-                        <span class="navlink">Animais</span>
-                        <i class="bx bx-chevron-right arrow-left"></i>
-                    </div>
-
-                    <ul class="menu_items submenu">
-                        <a href="./cadatrar.php" class="nav_link sublink">Cadastrar Animaos</a>
-                        <a href="#" class="nav_link sublink">Cadastrar Especie</a>
-                        <a href="#" class="nav_link sublink">Ver Animais</a>
-                        <a href="#" class="nav_link sublink">Ver Especie</a>
-                    </ul>
+                        <span class="navlink"> <b>Dashboard</b></span>
+                    </a>
                 </li>
-                <!-- end -->
+                <li class="item">
+                    <a href="./cadatrar.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink"> Cadastrar Animaos</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./cadastarEspecie.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink"> Cadastrar Especie</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./verAnimas.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink"> Ver Animais</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./verEspecie.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-loader-circle"></i>
+                        </span>
+                        <span class="navlink"> Ver Especie</span>
+                    </a>
+                </li>
 
 
             </ul>
@@ -144,19 +165,19 @@ $result = $conn->query($sql);
 
             <div class="card1">
                 <h4>Total de Animais</h4>
-                <h1>55</h1>
+                <h1>15</h1>
             </div>
             <div class="card1">
                 <h4>total Especie</h4>
-                <h1>55</h1>
+                <h1>5</h1>
             </div>
             <div class="card1">
                 <h4>Total de Visiatntes</h4>
-                <h1>55</h1>
+                <h1>8</h1>
             </div>
             <div class="card1">
                 <h4>Total de Bilhentes</h4>
-                <h1>55</h1>
+                <h1>9</h1>
             </div>
         </div>
     </div>

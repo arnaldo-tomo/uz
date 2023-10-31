@@ -36,6 +36,35 @@ $result = $conn->query($sql);
             padding: 10px 0;
             margin-top: 20px;
         }
+
+        .formAgenda {
+            margin-left: 90px;
+        }
+
+        .serve {
+            width: 400px;
+            height: 40px;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 18px;
+            color: var(--grey-color);
+            border: 1px solid var(--grey-color-light);
+            padding: 0 20px;
+            border-radius: 5px;
+        }
+
+        .bt-lj {
+            border-color: #eb9b48;
+            background: linear-gradient(to bottom, #f7d6b3 5%, #eb9b48 100%);
+            box-shadow: inset 0px 1px 0px 0px #fdf7f0;
+            color: #333;
+            height: 40px;
+            width: 300px;
+        }
+
+        .bt-lj:hover {
+            background: linear-gradient(to bottom, #eb9b48 5%, #f7d6b3 100%);
+        }
     </style>
 </head>
 
@@ -55,14 +84,14 @@ $result = $conn->query($sql);
                     </div>
                 </div>
 
-                <!--=============== NAV MENU ===============-->
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li><a href="./index.php" class="nav__link">Home</a></li>
+                        <li><a href="./reserva.php" class="nav__link">Minhas Servas </a></li>
+
 
                         <li><a href="../info.php" class="nav__link">Sobre</a></li>
 
-                        <!--=============== DROPDOWN 1 ===============-->
                         <li class="dropdown__item">
                             <div class="nav__link">
                                 Grupos <i class="ri-arrow-down-s-line dropdown__arrow"> </i>
@@ -121,137 +150,74 @@ $result = $conn->query($sql);
                 </div>
             </nav>
         </header>
+        <section class="fatima22">
+            <!-- <h1>Todos os Animas</h1> -->
+        </section>
 
-        <!--=============== MAIN JS ===============-->
-        <!-- <header>
-            <h1>Zoológico Local</h1>
-        </header>
-        <nav id="menu-geral">
-            <ul id="menu-geral-w">
-                <li><a href="info.html">Informação Geral</a></li>
-                <li>
-                    <a href="#grupos">Grupos</a>
-                    <ul class="submenu">
-                        <li><a href="Mamiferos.Html">Mamíferos</a></li>
-                        <li><a href="repteis.html">Répteis</a></li>
-                        <li><a href="aves.html">Aves</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Fale conosco</a></li>
-            </ul>
-        </nav> -->
+        <section class="informacao-geral">
+            <div class="conteudo1">
+                <h2>Zebra</h2>
+                <P>As zebras são mamíferos que pertencem à família dos cavalos, os equídeos, nativos da África
+                    central e do sul.</P>
+                <p><strong>Horário de Funcionamento:</strong> Segunda a Domingo, das 9:00 às 18:00</p>
+                <p><strong>Preço de Ingresso:</strong> $20 (adultos), $10 (crianças de 3 a 12 anos)</p>
+                <p><strong>Serviços Oferecidos:</strong> Alimentação, Passeios Guiados, Lojas de Lembranças</p>
+                <p><strong>Endereço:</strong> 123 Rua do Zoológico, Cidade da Beira</p>
+                <p><strong>Telefone:</strong> (+258)844604568</p>
+                <p><strong>Diretor:</strong> Nome do Diretor</p>
+                <p><strong>Email para Contato:</strong> josesixpence30@gmail.com</p>
+                <p><strong>Número de Visitantes por Ano:</strong> Cerca de 500.000</p>
+            </div>
+        </section>
 
+        <div class="formAgenda">
+            <h2>Agendar Visita</h2>
+            <div id="dataHora"></div>
+            <?php if (isset($error_message)) { ?>
+                <p style="color: blue;"><b><?php echo $error_message; ?></b></p>
+            <?php } ?>
+            <form action="./Controllerserva.php" method="post">
+                <input type="hidden" name="nome" value=" <?php echo $username; ?>">
+                <input type="hidden" name="email" value="<?php echo $email; ?>">
+                <input class="serve" type="datetime-local" name="datahora" id="" required>
+                <input class="serve" type="number" placeholder="Informe o número  de pessoas" name="pessoas" id="" required>
+                <button class="bt bt-lj" type="submit">Submeter Visita</button>
+            </form>
+        </div>
+        <main>
+            <section class="cards">
+                <?php
+                if ($result->num_rows > 0) {
 
-        <form action="pagina-de-resultado.html" method="get">
-            <!-- <input type="text" id="pesquisa" name="q" placeholder="Pesquisar..." autofocus> -->
-            <!-- <input type="submit" value="Pesquisar"> -->
-            <section class="fatima22">
-                <h1>Todos os Animas</h1>
-            </section>
-
-            <section class="informacao-geral">
-                <div class="conteudo1">
-                    <h2>Informação Geral do Zoológico</h2>
-                    <p><strong>Horário de Funcionamento:</strong> Segunda a Domingo, das 9:00 às 18:00</p>
-                    <p><strong>Preço de Ingresso:</strong> $20 (adultos), $10 (crianças de 3 a 12 anos)</p>
-                    <p><strong>Serviços Oferecidos:</strong> Alimentação, Passeios Guiados, Lojas de Lembranças</p>
-                    <p><strong>Endereço:</strong> 123 Rua do Zoológico, Cidade da Beira</p>
-                    <p><strong>Telefone:</strong> (+258)844604568</p>
-                    <p><strong>Diretor:</strong> Nome do Diretor</p>
-                    <p><strong>Email para Contato:</strong> josesixpence30@gmail.com</p>
-                    <p><strong>Número de Visitantes por Ano:</strong> Cerca de 500.000</p>
-                </div>
-            </section>
-            <main>
-                <section class="cards">
-                    <?php
-                    if ($result->num_rows > 0) {
-
-                        while ($row = $result->fetch_assoc()) {
-                            echo '<div class="card">';
-                            echo '    <div class="card__image-container">';
-                            echo '        <img src="../../../admin/controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '" />';
-                            echo '    </div>';
-                            echo '    <div class="card__content">';
-                            echo '        <p class="card__title text--medium">' . $row["nome"] . '</p>';
-                            echo '        <div class="card__info">';
-                            echo '            <p class="text--medium">' . $row["descricao"] . '</p>';
-                            echo '            <p class="card__price text--medium">' . $row["especie"] . '</p>';
-                            echo '            <p class="card__price text--medium">' . $row["sexo"] . '</p>';
-                            echo '        </div>';
-                            echo '    </div>';
-                            echo '</div>';
-                        }
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<div class="card" href="./detalhes.php?id=' . $row["id"] . '">';
+                        echo '    <div class="card__image-container">';
+                        echo '        <img href="./detalhes.php?id=' . $row["id"] . '" src="../../../admin/controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '" />';
+                        echo '    </div>';
+                        echo '    <div class="card__content">';
+                        echo '        <a href="./detalhes.php?id=' . $row["id"] . '" class="card__title text--medium">' . $row["nome"] . '</a>';
+                        echo '        <div class="card__info">';
+                        // echo '            <a href="./detalhes.php?id=' . $row["id"] . '"  class="text--medium">' . $row["descricao"] . '</a>';
+                        echo '            <a href="./detalhes.php?id=' . $row["id"] . '" class="card__price text--medium">Especie : ' . $row["especie"] . '</a>';
+                        echo '            <a href="./detalhes.php?id=' . $row["id"] . '" class="card__price text--medium">Sexo: ' . $row["sexo"] . '</a>';
+                        echo '            <a href="./detalhes.php?id=' . $row["id"] . '" class="card__price text--medium">Grupo: ' . $row["sexo"] . '</a>';
+                        echo '        </div>';
+                        echo '    </div>';
+                        echo '</div>';
                     }
-                    ?> </section>
-            </main>
-            <script>
-                !(function() {
-                    var analytics = (window.analytics = window.analytics || []);
-                    if (!analytics.initialize)
-                        if (analytics.invoked)
-                            window.console &&
-                            console.error &&
-                            console.error("Segment snippet included twice.");
-                        else {
-                            analytics.invoked = !0;
-                            analytics.methods = [
-                                "trackSubmit",
-                                "trackClick",
-                                "trackLink",
-                                "trackForm",
-                                "pageview",
-                                "identify",
-                                "reset",
-                                "group",
-                                "track",
-                                "ready",
-                                "alias",
-                                "debug",
-                                "page",
-                                "once",
-                                "off",
-                                "on"
-                            ];
-                            analytics.factory = function(t) {
-                                return function() {
-                                    var e = Array.prototype.slice.call(arguments);
-                                    e.unshift(t);
-                                    analytics.push(e);
-                                    return analytics;
-                                };
-                            };
-                            for (var t = 0; t < analytics.methods.length; t++) {
-                                var e = analytics.methods[t];
-                                analytics[e] = analytics.factory(e);
-                            }
-                            analytics.load = function(t, e) {
-                                var n = document.createElement("script");
-                                n.type = "text/javascript";
-                                n.async = !0;
-                                n.src =
-                                    "https://cdn.segment.com/analytics.js/v1/" +
-                                    t +
-                                    "/analytics.min.js";
-                                var a = document.getElementsByTagName("script")[0];
-                                a.parentNode.insertBefore(n, a);
-                                analytics._loadOptions = e;
-                            };
-                            analytics.SNIPPET_VERSION = "4.1.0";
-                            analytics.load("FQ5NJmRc6LrFKVAC6ofHlSU7WIwGAdj5");
-                            analytics.page();
-                        }
-                })();
-            </script>
+                }
+                ?> </section>
+        </main>
+
         </form>
     </div>
     <footer>
         <div class="rodape-container">
             <div class="informacoes-contato">
                 <h3>Entre em Contato</h3>
-                <p><strong>Endereço:</strong> Rua do Zoológico, 1234</p>
-                <p><strong>Telefone:</strong> (123) 456-7890</p>
-                <p><strong>E-mail:</strong> contato@seuzoo.com</p>
+                <p><strong>Endereço:</strong> Gorongosa</p>
+                <p><strong>Telefone:</strong> (258) 84 6474688</p>
+                <p><strong>E-mail:</strong> contato@Gorongosa.com</p>
             </div>
             <div class="redes-sociais">
                 <h3>Redes Sociais</h3>
@@ -267,12 +233,26 @@ $result = $conn->query($sql);
             </div>
         </div>
         <div class="direitos-autorais">
-            &copy; 2023 Seu Zoológico. Todos os direitos reservados.
+            &copy; 2023 Zoológico. Todos os direitos reservados.
         </div>
     </footer>
-    <script src="../../../assets/js/fatima.js"></script>
 
     </div>
+    <script>
+        function atualizarDataHora() {
+            var dataHoraElement = document.getElementById('dataHora');
+            var agora = new Date();
+            var dataHora = agora.toLocaleString();
+
+            dataHoraElement.innerHTML = 'Data e Hora: ' + dataHora;
+
+            setTimeout(atualizarDataHora, 1000); // Atualiza a cada segundo
+        }
+
+        atualizarDataHora(); // Inicializa a função de atualização
+    </script>
+    <script src="../../../assets/js/fatima.js"></script>
+
     <script src="../../../assets/js/script.js"></script>
 </body>
 

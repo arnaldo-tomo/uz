@@ -60,7 +60,6 @@ $result = $conn->query($sql);
         </div>
     </nav>
 
-    <!-- sidebar -->
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
@@ -122,29 +121,14 @@ $result = $conn->query($sql);
                 <!-- End -->
 
                 <li class="item">
-                    <a href="#" class="nav_link">
+                    <a href="./bilhetes.php" class="nav_link">
                         <span class="navlink_icon">
                             <i class='bx bxs-door-open'></i>
                         </span>
-                        <span class="navlink">Bilhentes</span>
+                        <span class="navlink">Reservas</span>
                     </a>
                 </li>
-                <li class="item">
-                    <a href="#" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
-                        </span>
-                        <span class="navlink">Outros</span>
-                    </a>
-                </li>
-                <li class="item">
-                    <a href="#" class="nav_link">
-                        <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
-                        </span>
-                        <span class="navlink">Outros</span>
-                    </a>
-                </li>
+
             </ul>
 
             <!-- Sidebar Open / Close -->

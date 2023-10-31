@@ -102,9 +102,9 @@ $result = $conn->query($sql);
             <ul class="menu_items">
                 <div class="menu_title menu_editor"></div>
                 <li class="item">
-                    <a href="#" class="nav_link">
+                    <a href="./visitante.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-user"></i>
                         </span>
                         <span class="navlink"> Visitantes</span>
                     </a>
@@ -114,7 +114,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="#" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class='bx bxs-door-open'></i>
                         </span>
                         <span class="navlink">Bilhentes</span>
                     </a>

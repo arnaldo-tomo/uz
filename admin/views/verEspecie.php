@@ -22,7 +22,7 @@ if (isset($_SESSION['error_message'])) {
 
 
 // Consulta para recuperar os animais do banco de dados
-$sql = "SELECT * FROM animal";
+$sql = "SELECT * FROM especie";
 $result = $conn->query($sql);
 
 ?>
@@ -167,24 +167,45 @@ $result = $conn->query($sql);
         </div>
     </nav>
     <!-- JavaScript -->
-    <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
-        <div class="animas">
-            <h1>Cadastrar Animas</h1>
-            <?php if (isset($error_message)) { ?>
-                <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
-            <?php } ?>
-            <div class="inputs">
-                <label class="label">nome</label>
-                <br />
-                <input type="text" name="nome" class="inpt" placeholder="Informe o nome " required>
-            </div>
+    <div class="animas">
+        <h1>Todos as Especie</h1>
+        <?php if (isset($error_message)) { ?>
+            <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
+        <?php } ?>
+        <table border="1px" style="width: 1080px;">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nome </th>
+                    <th>Descricao </th>
+                    <th>Açção </th>
+                </tr>
+            </thead>
+            <tbody>
+                <img width="20px" />
+                <?php
+                if ($result->num_rows > 0) {
 
+                    while ($row = $result->fetch_assoc()) {
 
-            <div class="inputs">
-                <button class="btn" type="submit">Cadastrar Especie</button>
-            </div>
-        </div>
-    </form>
+                        echo '<td>' . $row["id"] . '</td>';
+                        echo '<td>' . $row["nome"] . '</td>';
+                        echo '<td>' . $row["descricao"] . '</td>';
+
+                        echo '<td>';
+                        echo '<a href="deletar_especie.php?id=' . $row["id"] . '">Deletar</a>';
+                        echo '</td>';
+                        echo '</tr>';
+                    }
+                    echo '</table>';
+                } else {
+                    echo "Nenhum animal cadastrado ainda.";
+                }
+                ?>
+            </tbody>
+        </table>
+
+    </div>
 
 
     <script src="../assets/js/main.js"></script>

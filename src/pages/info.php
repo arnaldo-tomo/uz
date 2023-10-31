@@ -1,3 +1,14 @@
+<?php
+session_start();
+include '../../configs/database.php';
+// Verifique se os cookies estão definidos
+if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
+    $username = $_COOKIE['username'];
+    $email = $_COOKIE['email'];
+}
+$sql = "SELECT * FROM animal";
+$result = $conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,7 +33,7 @@
         <header class="header">
             <nav class="nav container">
                 <div class="nav__data">
-                    <a href="./info.php" class="nav__logo">
+                    <a href="../pages/dashboard/index.php" class="nav__logo">
                         <i class="ri-planet-line"></i> ZOOlandia
                     </a>
 
@@ -35,9 +46,10 @@
                 <!--=============== NAV MENU ===============-->
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
-                        <li><a href="./info.php" class="nav__link">Home</a></li>
+                        <li><a href="../pages/dashboard/index.php" class="nav__link">Home</a></li>
+                        <li><a href="./dashboard/reserva.php" class="nav__link">Minhas Servas </a></li>
 
-                        <li class="ative"><a href="info.php" class="nav__link ">Sobre</a></li>
+                        <li class="ative"><a href="../pages/info.php" class="nav__link ">Sobre</a></li>
 
                         <!--=============== DROPDOWN 1 ===============-->
                         <li class="dropdown__item">
@@ -100,37 +112,38 @@
             </nav>
         </header>
 
-
-        <form action="pagina-de-resultado.html" method="get">
-            <!-- <input type="text" id="pesquisa" name="q" placeholder="Pesquisar..." autofocus> -->
-            <!-- <input type="submit" value="Pesquisar"> -->
-            <section class="fatima22">
-                <h1>Todos os Animas</h1>
-            </section>
-
-            <section>
-                <div class="conteudo1">
-                    <h1 class="cor">Escrever aqui a vossa descricao</h1>
-                    <p class="cor">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi esse doloribus
-                        necessitatibus
-                        dolorum! Nisi doloremque quidem error voluptatem omnis consectetur sapiente iusto quas mollitia
-                        repellat. Harum ab laborum illum perferendis.
-                        locale_accept_from_httpl Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-                        quaerat dolore dolorem quia numquam temporibus consequatur beatae sapiente quis praesentium
-                        recusandae ea doloribus saepe, deleniti aliquid nobis aliquam ad veritatis?
-                        Sunt quas dolorum explicabo libero vero veniam eum nemo, ea enim amet doloribus aliquid illo
-                        necessitatibus? Corporis quidem sit cum, dolores repellendus repudiandae sapiente, quae
-                        blanditiis non maxime architecto expedita.
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quis reprehenderit sapiente
-                        distinctio unde vel veniam ducimus voluptatibus dolore aspernatur, quia nisi tempore, nam
-                        repudiandae error expedita et ea accusamus?
-
-                    </p>
-
-                </div>
-            </section>
-
-        </form>
+        <section class="fatima22">
+            <h1>Sobre</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi esse doloribus
+                necessitatibus
+                dolorum! Nisi doloremque quidem error voluptatem omnis consectetur sapiente iusto quas mollitia
+                repellat. Harum ab laborum illum perferendis.
+                locale_accept_from_httpl Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+                quaerat dolore dolorem quia numquam temporibus consequatur beatae sapiente quis praesentium
+                recusandae ea doloribus saepe, deleniti aliquid nobis aliquam ad veritatis?
+                Sunt quas dolorum explicabo libero vero veniam eum nemo, ea enim amet doloribus aliquid illo
+                necessitatibus? Corporis quidem sit cum, dolores repellendus repudiandae sapiente, quae
+                blanditiis non maxime architecto expedita.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quis reprehenderit sapiente
+                distinctio unde vel veniam ducimus voluptatibus dolore aspernatur, quia nisi tempore, nam
+                repudiandae error expedita et ea accusamus?</p>
+        </section>
+        <section class="fatima22">
+            <h1>COntacto</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi esse doloribus
+                necessitatibus
+                dolorum! Nisi doloremque quidem error voluptatem omnis consectetur sapiente iusto quas mollitia
+                repellat. Harum ab laborum illum perferendis.
+                locale_accept_from_httpl Lorem, ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+                quaerat dolore dolorem quia numquam temporibus consequatur beatae sapiente quis praesentium
+                recusandae ea doloribus saepe, deleniti aliquid nobis aliquam ad veritatis?
+                Sunt quas dolorum explicabo libero vero veniam eum nemo, ea enim amet doloribus aliquid illo
+                necessitatibus? Corporis quidem sit cum, dolores repellendus repudiandae sapiente, quae
+                blanditiis non maxime architecto expedita.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt quis reprehenderit sapiente
+                distinctio unde vel veniam ducimus voluptatibus dolore aspernatur, quia nisi tempore, nam
+                repudiandae error expedita et ea accusamus?</p>
+        </section>
     </div>
     <footer>
         <div class="rodape-container">

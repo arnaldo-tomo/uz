@@ -21,9 +21,20 @@ if (isset($_SESSION['error_message'])) {
 
 
 
-// Consulta para recuperar os animais do banco de dados
-$sql = "SELECT * FROM animal";
-$result = $conn->query($sql);
+// Verifica se o formulário foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $_POST["nome"];
+    $descricao = $_POST["descricao"];
+
+
+    $sql = "INSERT INTO especie (nome, descricao) VALUES ('$nome', '$descricao')";
+    if ($conn->query($sql) === TRUE) {
+        $_SESSION['error_message'] = "Especie cadastrado com sucesso.";
+        header('Location: cadastarEspecie.php');
+    } else {
+        echo "Erro ao cadastrar o Especie: " . $conn->error;
+    }
+}
 
 ?>
 
@@ -167,7 +178,7 @@ $result = $conn->query($sql);
         </div>
     </nav>
     <!-- JavaScript -->
-    <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         <div class="animas">
             <h1>Cadastrar Animas</h1>
             <?php if (isset($error_message)) { ?>
@@ -178,11 +189,13 @@ $result = $conn->query($sql);
                 <br />
                 <input type="text" name="nome" class="inpt" placeholder="Informe o nome " required>
             </div>
-
+            <label class="label">Descricao</label><br>
+            <textarea class="ttrea" rows="5" name="descricao" required></textarea>
 
             <div class="inputs">
                 <button class="btn" type="submit">Cadastrar Especie</button>
             </div>
+        </div>
         </div>
     </form>
 

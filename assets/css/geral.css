@@ -89,10 +89,9 @@
     margin-top: 7%;
     margin-left: 1%;
 }
-section {
+.container {
     /* padding: 8rem 7%; */
 }
-
 .informacao1 .titulo {
     font-size: 10rem;
     font-weight: 700;
@@ -130,7 +129,7 @@ section {
 
 #menu-geral-w {
     padding-bottom: 50px;
-        padding-bottom: 50px;
+    padding-bottom: 50px;
     list-style-type: none;
     padding-right: 75%;
 

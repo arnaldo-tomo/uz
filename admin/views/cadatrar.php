@@ -21,8 +21,7 @@ if (isset($_SESSION['error_message'])) {
 }
 
 
-// Consulta para recuperar os animais do banco de dados
-$sql = "SELECT * FROM animal";
+$sql = "SELECT * FROM especie";
 $result = $conn->query($sql);
 
 ?>
@@ -186,7 +185,7 @@ $result = $conn->query($sql);
     <!-- JavaScript -->
     <form method="post" action="../controllers/animalsalvar.php" enctype="multipart/form-data">
         <div class="animas">
-            <h1>Cadastrar Animas</h1>
+            <h1>Cadastrar espécie</h1>
             <?php if (isset($error_message)) { ?>
                 <h2 style="color: blue;"><b><?php echo $error_message; ?></b></h2>
             <?php } ?>
@@ -209,16 +208,25 @@ $result = $conn->query($sql);
                     <option value="F">Femia</option>
                 </select>
             </div>
+
             <div class="inputs">
                 <label class="label">Espécie</label>
                 <br />
                 <select class="inpt" name="especie" required>
                     <option selected disabled>- Selecione a espécie de animal:-</option>
-                    <option value="cachorro">Cachorro</option>
-                    <option value="gato">Gato</option>
-                    <option value="coelho">Coelho</option>
-                    <option value="pássaro">Pássaro</option>
-                    <option value="peixe">Peixe</option>
+
+                    <?php
+                    if ($result->num_rows > 0) {
+
+                        while ($row = $result->fetch_assoc()) {
+
+                            echo ' <option value="' . $row["nome"] . '">' . $row["nome"] . '</option>';
+                        }
+                    } else {
+                        echo ' <option value="null">Nenhum animal cadastrado ainda.</option>';
+                    }
+                    ?>
+
                 </select>
             </div>
             <div class="inputs">

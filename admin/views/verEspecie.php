@@ -60,57 +60,50 @@ $result = $conn->query($sql);
         </div>
     </nav>
 
-    <!-- sidebar -->
     <nav class="sidebar">
         <div class="menu_content">
             <ul class="menu_items">
                 <div class="menu_title menu_dahsboard"></div>
-
-                <ul class="menu_items">
-                    <li class="item">
-                        <a href="./index.php" class="nav_link">
-                            <span class="navlink_icon">
-                                <i class="bx bx-home"></i>
-                            </span>
-                            <span class="navlink"> <b>Dashboard</b></span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./cadatrar.php" class="nav_link">
-                            <span class="navlink_icon">
-                                <i class="bx bx-loader-circle"></i>
-                            </span>
-                            <span class="navlink"> Cadastrar Animaos</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./cadastarEspecie.php" class="nav_link">
-                            <span class="navlink_icon">
-                                <i class="bx bx-loader-circle"></i>
-                            </span>
-                            <span class="navlink"> Cadastrar Especie</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./verAnimas.php" class="nav_link">
-                            <span class="navlink_icon">
-                                <i class="bx bx-loader-circle"></i>
-                            </span>
-                            <span class="navlink"> Ver Animais</span>
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="./verEspecie.php" class="nav_link">
-                            <span class="navlink_icon">
-                                <i class="bx bx-loader-circle"></i>
-                            </span>
-                            <span class="navlink"> Ver Especie</span>
-                        </a>
-                    </li>
-
-
-                </ul>
-
+                <li class="item">
+                    <a href="./index.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bx-home"></i>
+                        </span>
+                        <span class="navlink"> <b>Dashboard</b></span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./cadatrar.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dog"></i>
+                        </span>
+                        <span class="navlink"> Cadastrar Animaos</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./cadastarEspecie.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dog"></i>
+                        </span>
+                        <span class="navlink"> Cadastrar Especie</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./verAnimas.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dog"></i>
+                        </span>
+                        <span class="navlink"> Ver Animais</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="./verEspecie.php" class="nav_link">
+                        <span class="navlink_icon">
+                            <i class="bx bxs-dog"></i>
+                        </span>
+                        <span class="navlink"> Ver Especie</span>
+                    </a>
+                </li>
 
 
             </ul>
@@ -118,9 +111,9 @@ $result = $conn->query($sql);
             <ul class="menu_items">
                 <div class="menu_title menu_editor"></div>
                 <li class="item">
-                    <a href="#" class="nav_link">
+                    <a href="./visitante.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-user"></i>
                         </span>
                         <span class="navlink"> Visitantes</span>
                     </a>
@@ -130,7 +123,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="#" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class='bx bxs-door-open'></i>
                         </span>
                         <span class="navlink">Bilhentes</span>
                     </a>

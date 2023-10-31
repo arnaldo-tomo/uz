@@ -11,15 +11,9 @@ if (isset($_COOKIE['root'])) {
     header('Location: ../index.php');
     exit;
 }
-
-
-
-
-
 // Consulta para recuperar os animais do banco de dados
 $sql = "SELECT * FROM animal";
 $result = $conn->query($sql);
-
 ?>
 
 
@@ -72,7 +66,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="./cadatrar.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-dog"></i>
                         </span>
                         <span class="navlink"> Cadastrar Animaos</span>
                     </a>
@@ -80,7 +74,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="./cadastarEspecie.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-dog"></i>
                         </span>
                         <span class="navlink"> Cadastrar Especie</span>
                     </a>
@@ -88,7 +82,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="./verAnimas.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-dog"></i>
                         </span>
                         <span class="navlink"> Ver Animais</span>
                     </a>
@@ -96,7 +90,7 @@ $result = $conn->query($sql);
                 <li class="item">
                     <a href="./verEspecie.php" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class="bx bxs-dog"></i>
                         </span>
                         <span class="navlink"> Ver Especie</span>
                     </a>
@@ -165,15 +159,45 @@ $result = $conn->query($sql);
 
             <div class="card1">
                 <h4>Total de Animais</h4>
-                <h1>15</h1>
+                <?php $sql = "SELECT COUNT(*) as id FROM animal";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $total_linhas = $row["id"];
+
+                    echo "<h1>$total_linhas</h1>";
+                } else {
+                    echo "<h1>SEM NENHUM ANIMAL</h1>";
+                }
+                ?>
             </div>
             <div class="card1">
-                <h4>total Especie</h4>
-                <h1>5</h1>
+                <h4>Total espécie </h4>
+                <?php $sql = "SELECT COUNT(*) as id FROM especie";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $total_linhas = $row["id"];
+
+                    echo "<h1>$total_linhas</h1>";
+                } else {
+                    echo "<h1>SEM NENHUM ANIMAL</h1>";
+                }
+                ?>
             </div>
             <div class="card1">
                 <h4>Total de Visiatntes</h4>
-                <h1>8</h1>
+                <?php $sql = "SELECT COUNT(*) as id FROM users";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $total_linhas = $row["id"];
+
+                    echo "<h1>$total_linhas</h1>";
+                } else {
+                    echo "<h1>SEM NENHUM ANIMAL</h1>";
+                }
+                ?>
             </div>
             <div class="card1">
                 <h4>Total de Bilhentes</h4>

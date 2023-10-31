@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+include '../../../configs/database.php';
 // Verifique se os cookies estão definidos
 if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     $username = $_COOKIE['username'];
@@ -11,6 +11,8 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
     header('Location: ../../../index.php');
     exit;
 }
+$sql = "SELECT * FROM animal";
+$result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -69,47 +71,21 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
                             <ul class="dropdown__menu">
                                 <li>
                                     <a href="../grupos.php" class="dropdown__link">
-                                        <i class="ri-pie-chart-line"></i> Todos os Grupos
+                                        Todos os Grupos
                                     </a>
                                 </li>
                                 <li>
                                     <a href="../grupo/Mamiferos.php" class="dropdown__link">
-                                        <i class="ri-pie-chart-line"></i> Mamíferos
+                                        Mamíferos
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="../grupo/repteis.php" class="dropdown__link">
-                                        <i class="ri-arrow-up-down-line"></i> Repteis
+                                        Repteis
                                     </a>
                                 </li>
 
-                                <!--=============== DROPDOWN SUBMENU ===============-->
-                                <li class="dropdown__subitem">
-                                    <div class="dropdown__link">
-                                        <i class="ri-bar-chart-line"></i> Aves -> <i class="ri-add-line dropdown__add"></i>
-                                    </div>
-
-                                    <ul class="dropdown__submenu">
-                                        <li>
-                                            <a href="../grupo/aves.php" class="dropdown__sublink">
-                                                <i class="ri-file-list-line"></i> Aves colocar nome
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="dropdown__sublink">
-                                                <i class="ri-cash-line"></i> Outro nome
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="dropdown__sublink">
-                                                <i class="ri-refund-2-line"></i> aqui tamben
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                         </li>
 
@@ -188,133 +164,26 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['email'])) {
             </section>
             <main>
                 <section class="cards">
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1473283147055-e39c51463929?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1482784160316-6eb046863ece?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1470104240373-bc1812eddc9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1534143046043-44af3469836b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card__image-container">
-                            <img src="https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1200&q=80" />
-                        </div>
-                        <div class="card__content">
-                            <p class="card__title text--medium">
-                                colocar sua descricao aqui
-                            </p>
-                            <div class="card__info">
-                                <p class="text--medium">texto</p>
-                                <p class="card__price text--medium">outro aki</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                    <?php
+                    if ($result->num_rows > 0) {
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<div class="card">';
+                            echo '    <div class="card__image-container">';
+                            echo '        <img src="../../../admin/controllers/uploads/' . $row["foto"] . '" alt="' . $row["nome"] . '" />';
+                            echo '    </div>';
+                            echo '    <div class="card__content">';
+                            echo '        <p class="card__title text--medium">' . $row["nome"] . '</p>';
+                            echo '        <div class="card__info">';
+                            echo '            <p class="text--medium">' . $row["descricao"] . '</p>';
+                            echo '            <p class="card__price text--medium">' . $row["especie"] . '</p>';
+                            echo '            <p class="card__price text--medium">' . $row["sexo"] . '</p>';
+                            echo '        </div>';
+                            echo '    </div>';
+                            echo '</div>';
+                        }
+                    }
+                    ?> </section>
             </main>
             <script>
                 !(function() {

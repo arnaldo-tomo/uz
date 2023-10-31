@@ -13,20 +13,7 @@
     <link rel="stylesheet" href="../../assets/css/menu.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <style>
-        footer {
-            background-color: #e2c044 color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            margin-top: 20px;
-        }
 
-
-
-        .cor {
-            text-decoration-color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -61,47 +48,22 @@
                             <ul class="dropdown__menu">
                                 <li>
                                     <a href="grupos.php" class="dropdown__link">
-                                        <i class="ri-pie-chart-line"></i> Todos os Grupos
+                                        Todos os Grupos
                                     </a>
                                 </li>
                                 <li>
                                     <a href="grupo/Mamiferos.php" class="dropdown__link">
-                                        <i class="ri-pie-chart-line"></i> Mamíferos
+                                        Mamíferos
                                     </a>
                                 </li>
 
                                 <li>
                                     <a href="grupo/repteis.php" class="dropdown__link">
-                                        <i class="ri-arrow-up-down-line"></i> Repteis
+                                        Repteis
                                     </a>
                                 </li>
 
-                                <!--=============== DROPDOWN SUBMENU ===============-->
-                                <li class="dropdown__subitem">
-                                    <div class="dropdown__link">
-                                        <i class="ri-bar-chart-line"></i> Aves -> <i class="ri-add-line dropdown__add"></i>
-                                    </div>
 
-                                    <ul class="dropdown__submenu">
-                                        <li>
-                                            <a href="grupo/aves.php" class="dropdown__sublink">
-                                                <i class="ri-file-list-line"></i> Aves colocar nome
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="dropdown__sublink">
-                                                <i class="ri-cash-line"></i> Outro nome
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" class="dropdown__sublink">
-                                                <i class="ri-refund-2-line"></i> aqui tamben
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
                             </ul>
                         </li>
 

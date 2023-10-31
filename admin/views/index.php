@@ -183,8 +183,18 @@ $result = $conn->query($sql);
                 ?>
             </div>
             <div class="card1">
-                <h4>Total de Bilhentes</h4>
-                <h1>9</h1>
+                <h4>Total de Reservas</h4>
+                <?php $sql = "SELECT COUNT(*) as id FROM visitas";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    $row = $result->fetch_assoc();
+                    $total_linhas = $row["id"];
+
+                    echo "<h1>$total_linhas</h1>";
+                } else {
+                    echo "<h1>SEM NENHUM ANIMAL</h1>";
+                }
+                ?>
             </div>
         </div>
     </div>

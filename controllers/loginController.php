@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = $result->fetch_assoc();
         $email = $row['email'];
 
-        setcookie('username', $username, time() + 3600, '/');
+        setcookie('usern ame', $username, time() + 3600, '/');
         setcookie('email', $email, time() + 3600, '/');
 
         $_SESSION['username'] = $username;

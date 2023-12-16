@@ -1,2 +1,2 @@
 # uz
- Trabalho de fatima
+ Trabalho de fatima.
